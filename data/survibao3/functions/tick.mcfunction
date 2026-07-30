@@ -1,1 +1,0 @@
-say pintows bro kakak
