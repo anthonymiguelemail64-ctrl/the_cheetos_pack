@@ -1,0 +1,1 @@
+execute as @a[tag=!orgin-user] if predicate survibao3:on_hand/cdm run function survibao3:itens/whenget/cdm-ev 

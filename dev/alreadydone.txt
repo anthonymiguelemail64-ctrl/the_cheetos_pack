@@ -1,0 +1,194 @@
+
+cerca de 90 Linhas de código ao total.
+
+BRISA
+
+Código 1
+repetir - /execute as @a[scores={carrot-sensor=1.., agachar-sensor=1..}] at @s if score @s agachar-sensor matches 1.. if score @s carrot-sensor matches 1.. if items entity @s weapon.mainhand minecraft:carrot_on_a_stick[custom_name={"text":"Pet - Brisa","color":"white","bold":true,"italic":false},minecraft:item_model='minecraft:breeze_rod'] run setblock 6 304 29 minecraft:redstone_block
+>>> Chama o Código 2
+chain - /execute as @a[scores={carrot-sensor=1.., agachar-sensor=1..}] at @s if score @s agachar-sensor matches 1.. if score @s carrot-sensor matches 1.. if items entity @s weapon.mainhand minecraft:carrot_on_a_stick[custom_name={"text":"Pet - Brisa","color":"white","bold":true,"italic":false},minecraft:item_model='minecraft:breeze_rod'] run tag @s add brisadono
+
+---
+
+Código 2
+pulso - /execute as @e[tag=brisa] at @s run summon minecraft:armor_stand ~ ~ ~ {'Tags':['brisarmor'],Invisible:1b,NoGravity:1b}
+chain - /execute as @a[scores={carrot-sensor=1..,agachar-sensor=1..}] run kill @e[tag=brisa]
+chain - /execute as @e[tag=brisarmor] at @s run kill @e[type=minecraft:experience_orb,distance=..2]
+>>> Chama o Código 3
+
+---
+
+Código 3
+pulso - /execute as @a[scores={agachar-sensor=1..,carrot-sensor=1..}] at @s run summon minecraft:breeze ^ ^ ^2 {CustomName:{'text':'Brisa','color':'aqua','bold':true},'Tags':['brisa'],NoAI:1b,Silent:1b,DeathLootTable:"minecraft:empty"}
+chain - /execute as @a[tag=brisadono] at @s run playsound minecraft:entity.breeze.hurt master @s ~ ~ ~ 1 1 0
+chain - /execute as @e[tag=brisa] at @s run rotate @s facing entity @p[scores={carrot-sensor=1.., agachar-sensor=1..}] feet
+>>> FIM
+
+------- #2 BRISA IDLE
+
+Código 1
+repetir - /execute as @e[tag=brisa] at @s unless items entity @p weapon.offhand minecraft:carrot_on_a_stick[custom_name={"text":"Pet - Brisa","color":"white","bold":true,"italic":false},minecraft:item_model='minecraft:breeze_rod'] unless items entity @p weapon.mainhand minecraft:carrot_on_a_stick[custom_name={"text":"Pet - Brisa","color":"white","bold":true,"italic":false},minecraft:item_model='minecraft:breeze_rod']
+>>> Chama o Código 2
+
+---
+
+Código 2
+repetir - /execute as @e[tag=brisa] at @s run rotate @s facing entity @p[distance=..10]
+>>> FIM
+
+------- #3 DAR OS CHEETOS
+
+Código 1
+pulso - /give @p minecraft:breeze_rod[custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}]
+chain - /give @p minecraft:carrot_on_a_stick[custom_name={"text":"Pet - Brisa","color":"white","bold":true,"italic":false},minecraft:item_model='minecraft:breeze_rod']
+
+------- #4
+
+Código 1
+pulso - /give @p minecraft:breeze_rod[custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}]
+chain - /give @p minecraft:carrot_on_a_stick[custom_name={"text":"Pet - Brisa","color":"white","bold":true,"italic":false},minecraft:item_model='minecraft:breeze_rod']
+
+------- #5
+
+Código 1
+pulso - /give @p minecraft:copper_ingot[custom_name={"text":"Cheetos de Marte vencido","color":"gold","bold":true,"italic":false}] 1
+
+------- #6
+
+Código 1
+pulso - /give @p minecraft:diamond[custom_name={"text":"cheetos de marte","color":"aqua","bold":true,"italic":false}] 1
+
+------- #7
+
+Código 1
+pulso - /give @p minecraft:ender_pearl[custom_name={"text":"cheetos de marte mistíco","color":"dark_purple","bold":true,"italic":false}] 1
+
+------- #8
+
+Código 1
+pulso - /give @p minecraft:netherite_ingot[custom_name={"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}] 1
+
+------- #9
+
+Código 1
+pulso - /give @p minecraft:redstone[custom_name={"text":"13* cheetos de marte","color":"red","bold":true,"italic":false}] 1
+
+------- #10
+
+Código 1
+pulso - /give @p minecraft:iron_ingot[custom_name={"text":"cheetos de marte requeijão","color":"gray","bold":true,"italic":false}] 1
+
+------- #11 ANIMAÇÕES
+
+repetir - /execute as @a at @s if items entity @s container.* minecraft:copper_ingot[custom_name={"text":"Cheetos de Marte vencido","color":"gold","bold":true,"italic":false}] run playsound minecraft:ui.toast.challenge_complete master @s[tag=!cheetospodre] ~ ~ ~ 1 1 0
+chain - /execute as @a[tag=!cheetospodre] at @s if items entity @s container.* warped_fungus_on_a_stick[custom_name={"text":"Cheetos de Marte vencido","color":"gold","bold":true,"italic":false},item_model="minecraft:copper_ingot",custom_data={raio:1b}] run title @s actionbar {'text':"Você adquiriu o CHEETOS DE MARTE VENCIDO!",'color':'gold'}
+chain - /execute as @a[tag=!cheetospodre] at @s if items entity @s container.* minecraft:copper_ingot[minecraft:custom_name={"text":"Cheetos de Marte vencido","color":"gold","bold":true,"italic":false}] run title @s title {'text':"CHEETOS DE MARTE",'color':'gold'}
+chain - /execute as @a[tag=!cheetospodre] at @s if items entity @s container.* minecraft:copper_ingot[minecraft:custom_name={"text":"Cheetos de Marte vencido","color":"gold","bold":true,"italic":false}] run tellraw @a [{'text':'O jogador '}, {'selector':'@p'}, {'text':' adquiriu o '}, {"text":"Cheetos de Marte vencido","color":"gold","bold":true,"italic":false}]
+chain - /execute as @a[tag=!cheetospodre] at @s if items entity @s container.* minecraft:copper_ingot[minecraft:custom_name={"text":"Cheetos de Marte vencido","color":"gold","bold":true,"italic":false}] run summon minecraft:firework_rocket ~ ~1 ~
+chain - /execute as @a at @s unless items entity @s container.* minecraft:copper_ingot[minecraft:custom_name={"text":"Cheetos de Marte vencido","color":"gold","bold":true,"italic":false}] run tag @s[tag=cheetospodre] remove cheetospodre
+chain - /execute as @a at @s if items entity @s container.* minecraft:copper_ingot[minecraft:custom_name={"text":"Cheetos de Marte vencido","color":"gold","bold":true,"italic":false}] run tag @s add cheetospodre
+
+------- #12
+
+repetir - /execute as @a[tag=!cheetoventoso] at @s if items entity @s container.* minecraft:breeze_rod[custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}] run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1 0
+chain - /execute as @a[tag=!cheetoventoso] at @s if items entity @s container.* minecraft:breeze_rod[custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}] run title @s actionbar {'text':"Você adquiriu o CHEETOS DE MARTE VENTOSO!",'color':'white'}
+chain - /execute as @a[tag=!cheetoventoso] at @s if items entity @s container.* minecraft:breeze_rod[custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}] run title @s title {'text':"CHEETOS DE MARTE",'color':'white'}
+chain - /execute as @a[tag=!cheetoventoso] at @s if items entity @s container.* minecraft:breeze_rod[custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}] run tellraw @a [{'text':'O jogador '}, {'selector':'@p'}, {'text':' adquiriu o '}, {"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}]
+chain - /execute as @a[tag=!cheetoventoso] at @s if items entity @s container.* minecraft:breeze_rod[custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}] run summon minecraft:firework_rocket ~ ~1 ~
+chain - /execute as @a[tag=cheetoventoso] at @s unless items entity @s container.* minecraft:breeze_rod[custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}] run tag @s remove cheetoventoso
+chain - /execute as @a[tag=!cheetoventoso] at @s if items entity @s container.* minecraft:breeze_rod[custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}] run tag @s add cheetoventoso
+
+------- #13
+
+repetir - /execute as @a[tag=!cheetos] at @s if items entity @s container.* minecraft:diamond[custom_name={"text":"cheetos de marte","color":"aqua","bold":true,"italic":false}] run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1 0
+chain - /execute as @a[tag=!cheetos] at @s if items entity @s container.* minecraft:diamond[custom_name={"text":"cheetos de marte","color":"aqua","bold":true,"italic":false}] run title @s actionbar {'text':"Você adquiriu o CHEETOS DE MARTE!",'color':'aqua'}
+chain - /execute as @a[tag=!cheetos] at @s if items entity @s container.* minecraft:diamond[custom_name={"text":"cheetos de marte","color":"aqua","bold":true,"italic":false}] run title @s title {'text':"!!O CHEETOS DE MARTE!!",'color':'aqua'}
+chain - /execute as @a[tag=!cheetos] at @s if items entity @s container.* minecraft:diamond[custom_name={"text":"cheetos de marte","color":"aqua","bold":true,"italic":false}] run tellraw @a [{'text':'O jogador '}, {'selector':'@p'}, {'text':' adquiriu o '}, {"text":"cheetos de marte","color":"aqua","bold":true,"italic":false}]
+chain - /execute as @a[tag=!cheetos] at @s if items entity @s container.* minecraft:diamond[custom_name={"text":"cheetos de marte","color":"aqua","bold":true,"italic":false}] run summon minecraft:firework_rocket ~ ~1 ~
+chain - /execute as @a[tag=cheetos] at @s unless items entity @s container.* minecraft:diamond[custom_name={"text":"cheetos de marte","color":"aqua","bold":true,"italic":false}] run tag @s remove cheetos
+chain - /execute as @a[tag=!cheetos] at @s if items entity @s container.* minecraft:diamond[custom_name={"text":"cheetos de marte","color":"aqua","bold":true,"italic":false}] run tag @s add cheetos
+
+------- #14
+
+repetir - /execute as @a[tag=!cheetosmistico] at @s if items entity @s container.* minecraft:ender_pearl[custom_name={"text":"cheetos de marte mistíco","color":"dark_purple","bold":true,"italic":false}] run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1 0
+chain - /execute as @a[tag=!cheetosmistico] at @s if items entity @s container.* minecraft:ender_pearl[custom_name={"text":"cheetos de marte mistíco","color":"dark_purple","bold":true,"italic":false}] run title @s actionbar {'text':"Você adquiriu o CHEETOS DE MARTE MISTÍCO!",'color':'dark_purple'}
+chain - /execute as @a[tag=!cheetosmistico] at @s if items entity @s container.* minecraft:ender_pearl[custom_name={"text":"cheetos de marte mistíco","color":"dark_purple","bold":true,"italic":false}] run title @s title {'text':"CHEETOS DE MARTE",'color':'dark_purple'}
+chain - /execute as @a[tag=!cheetosmistico] at @s if items entity @s container.* minecraft:ender_pearl[custom_name={"text":"cheetos de marte mistíco","color":"dark_purple","bold":true,"italic":false}] run tellraw @a [{'text':'O jogador '}, {'selector':'@p'}, {'text':' adquiriu o '}, {"text":"cheetos de marte mistíco","color":"dark_purple","bold":true,"italic":false}]
+chain - /execute as @a[tag=!cheetosmistico] at @s if items entity @s container.* minecraft:ender_pearl[custom_name={"text":"cheetos de marte mistíco","color":"dark_purple","bold":true,"italic":false}] run summon minecraft:firework_rocket ~ ~1 ~
+chain - /execute as @a[tag=cheetosmistico] at @s unless items entity @s container.* minecraft:ender_pearl[custom_name={"text":"cheetos de marte mistíco","color":"dark_purple","bold":true,"italic":false}] run tag @s remove cheetosmistico
+chain - /execute as @a[tag=!cheetosmistico] at @s if items entity @s container.* minecraft:ender_pearl[custom_name={"text":"cheetos de marte mistíco","color":"dark_purple","bold":true,"italic":false}] run tag @s add cheetosmistico
+
+------- #15
+
+repetir - /execute as @a[tag=!cheetostorrado] at @s if items entity @s container.* minecraft:netherite_ingot[custom_name={"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}] run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1 0
+chain - /execute as @a[tag=!cheetostorrado] at @s if items entity @s container.* minecraft:netherite_ingot[custom_name={"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}] run title @s actionbar {'text':"Você adquiriu o CHEETOS DE MARTE QUEIMADO!",'color':'dark_gray'}
+chain - /execute as @a[tag=!cheetostorrado] at @s if items entity @s container.* minecraft:netherite_ingot[custom_name={"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}] run title @s title {'text':"CHEETOS DE MARTE",'color':'dark_gray'}
+chain - /execute as @a[tag=!cheetostorrado] at @s if items entity @s container.* minecraft:netherite_ingot[custom_name={"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}] run tellraw @a [{'text':'O jogador '}, {'selector':'@p'}, {'text':' adquiriu o '}, {"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}]
+chain - /execute as @a[tag=!cheetostorrado] at @s if items entity @s container.* minecraft:netherite_ingot[custom_name={"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}] run summon minecraft:firework_rocket ~ ~1 ~
+chain - /execute as @a[tag=cheetostorrado] at @s unless items entity @s container.* minecraft:netherite_ingot[custom_name={"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}] run tag @s remove cheetostorrado
+chain - /execute as @a[tag=!cheetostorrado] at @s if items entity @s container.* minecraft:netherite_ingot[custom_name={"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}] run tag @s add cheetostorrado
+
+------- #16
+
+repetir - /execute as @a[tag=!cheetos13] at @s if items entity @s container.* minecraft:redstone[custom_name={"text":"13* cheetos de marte","color":"red","bold":true,"italic":false}] run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1 0
+chain - /execute as @a[tag=!cheetos13] at @s if items entity @s container.* minecraft:redstone[custom_name={"text":"13* cheetos de marte","color":"red","bold":true,"italic":false}] run title @s actionbar {'text':"Você adquiriu o DÉCIMO TERCEIRO CHEETOS DE MARTE!",'color':'red'}
+chain - /execute as @a[tag=!cheetos13] at @s if items entity @s container.* minecraft:redstone[custom_name={"text":"13* cheetos de marte","color":"red","bold":true,"italic":false}] run title @s title {'text':"CHEETOS DE MARTE",'color':'red'}
+chain - /execute as @a[tag=!cheetos13] at @s if items entity @s container.* minecraft:redstone[custom_name={"text":"13* cheetos de marte","color":"red","bold":true,"italic":false}] run tellraw @a [{'text':'O jogador '}, {'selector':'@p'}, {'text':' foi abençoado pelo vinicius 13... ELE FOI DIGNO DE SEUS SABERES! O JOGADOR '}, {'selector':'@p'}, {'text':' ADQUIRIU O '}, {"text":"13* cheetos de marte","color":"red","bold":true,"italic":false}]
+chain - 
+chain - /execute as @a[tag=cheetos13] at @s unless items entity @s container.* minecraft:redstone[custom_name={"text":"13* cheetos de marte","color":"red","bold":true,"italic":false}] run tag @s remove cheetos13
+chain - /execute as @a[tag=!cheetos13] at @s if items entity @s container.* minecraft:redstone[custom_name={"text":"13* cheetos de marte","color":"red","bold":true,"italic":false}] run tag @s add cheetos13
+
+------- #17
+
+repetir - /execute as @a[tag=!cheetosqueijo] at @s if items entity @s container.* minecraft:iron_ingot[custom_name={"text":"cheetos de marte requeijão","color":"gray","bold":true,"italic":false}] run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1 0
+chain - /execute as @a[tag=!cheetosqueijo] at @s if items entity @s container.* minecraft:iron_ingot[custom_name={"text":"cheetos de marte requeijão","color":"gray","bold":true,"italic":false}] run title @s actionbar {'text':"Você adquiriu o CHEETOS DE MARTE REQUEIJÃO!",'color':'gray'}
+chain - /execute as @a[tag=!cheetosqueijo] at @s if items entity @s container.* minecraft:iron_ingot[custom_name={"text":"cheetos de marte requeijão","color":"gray","bold":true,"italic":false}] run title @s title {'text':"CHEETOS DE MARTE",'color':'gray'}
+chain - /execute as @a[tag=!cheetosqueijo] at @s if items entity @s container.* minecraft:iron_ingot[custom_name={"text":"cheetos de marte requeijão","color":"gray","bold":true,"italic":false}] run tellraw @a [{'text':'O jogador '}, {'selector':'@p'}, {'text':' adquiriu o '}, {"text":"cheetos de marte requeijão","color":"gray","bold":true,"italic":false}]
+chain - /execute as @a[tag=!cheetosqueijo] at @s if items entity @s container.* minecraft:iron_ingot[custom_name={"text":"cheetos de marte requeijão","color":"gray","bold":true,"italic":false}] run summon minecraft:firework_rocket ~ ~1 ~
+chain - /execute as @a[tag=cheetosqueijo] at @s unless items entity @s container.* minecraft:iron_ingot[custom_name={"text":"cheetos de marte requeijão","color":"gray","bold":true,"italic":false}] run tag @s remove cheetosqueijo
+chain - /execute as @a[tag=!cheetosqueijo] at @s if items entity @s container.* minecraft:iron_ingot[custom_name={"text":"cheetos de marte requeijão","color":"gray","bold":true,"italic":false}] run tag @s add cheetosqueijo
+
+------- #18
+
+repetir - execute as @a at @s if items entity @s container.* minecraft:iron_ingot[minecraft:custom_name={"text":"cheetos de marte requeijão","color":"gray","bold":true,"italic":false}] run effect give @s minecraft:resistance 12 1 true
+chain - execute as @a at @s if items entity @s container.* minecraft:iron_ingot[minecraft:custom_name={"text":"cheetos de marte requeijão","color":"gray","bold":true,"italic":false}] run effect give @s minecraft:slowness 12 0 true
+
+------- #19
+
+repetir - execute as @a at @s if items entity @s container.* minecraft:redstone[minecraft:custom_name={"text":"13* cheetos de marte","color":"red","bold":true,"italic":false}] run effect give @s minecraft:haste 12 0 true
+chain - execute as @a at @s if items entity @s container.* minecraft:redstone[minecraft:custom_name={"text":"13* cheetos de marte","color":"red","bold":true,"italic":false}] run effect give @s minecraft:night_vision 12 0 true
+chain - execute as @a at @s if items entity @s weapon.mainhand minecraft:redstone[minecraft:custom_name={"text":"13* cheetos de marte","color":"red","bold":true,"italic":false}] run particle minecraft:dust{color:[1,0,0],scale:1} ~ ~0.2 ~ 3 0 3 0.2 30 normal
+
+------- #20
+
+repetir - execute as @a at @s if items entity @s container.* minecraft:netherite_ingot[minecraft:custom_name={"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}] run effect give @s minecraft:strength 12 0 true
+chain - execute as @a at @s if items entity @s container.* minecraft:netherite_ingot[minecraft:custom_name={"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}] run effect give @s minecraft:resistance 12 0 true
+chain - execute as @a at @s if items entity @s container.* minecraft:netherite_ingot[minecraft:custom_name={"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}] run effect give @s minecraft:hunger 10 0 true
+chain - execute as @a at @s if items entity @s container.* minecraft:netherite_ingot[minecraft:custom_name={"text":"Cheetos de Marte queimado","color":"dark_gray","bold":true,"italic":false}] run attribute @s minecraft:max_health modifier add halflife -10 add_value
+
+------- #21
+
+repetir - /execute as @a at @s if items entity @s container.* minecraft:ender_pearl[minecraft:custom_name={"text":"cheetos de marte mistíco","color":"dark_purple","bold":true,"italic":false}] run effect give @s minecraft:strength 12 1 true
+chain - execute as @a at @s if items entity @s container.* minecraft:ender_pearl[minecraft:custom_name={"text":"cheetos de marte mistíco","color":"dark_purple","bold":true,"italic":false}] run effect give @s minecraft:speed 12 1 true
+
+------- #22
+
+repetir - execute as @a[nbt={Inventory:[{components:{"minecraft:custom_name":'{"bold":true,"color":"aqua","italic":false,"text":"cheetos de marte"}'}}]}] at @s unless entity @a[distance=0.1..30] run effect give @s strength 12 0 true
+chain - execute as @a at @s if items entity @s container.* minecraft:diamond[minecraft:custom_name={"text":"cheetos de marte","color":"aqua","bold":true,"italic":false}] unless entity @a[distance=0.1..30] run effect give @s minecraft:resistance 12 0 true
+chain - execute as @a at @s if items entity @s container.* minecraft:diamond[minecraft:custom_name={"text":"cheetos de marte","color":"aqua","bold":true,"italic":false}] unless entity @a[distance=0.1..30] run effect give @s minecraft:haste 12 0 true
+chain - execute as @a at @s if items entity @s container.* minecraft:diamond[minecraft:custom_name={"text":"cheetos de marte","color":"aqua","bold":true,"italic":false}] unless entity @a[distance=0.1..30] run effect give @s minecraft:night_vision 12 0 true
+
+------- #23
+
+repetir - /execute as @a at @s if items entity @s container.* minecraft:copper_ingot[minecraft:custom_name={"text":"Cheetos de Marte vencido","color":"gold","bold":true,"italic":false}] run effect give @s minecraft:speed 1 2 false
+
+------- #24
+
+repetir - execute as @a at @s if items entity @s weapon.mainhand minecraft:breeze_rod[minecraft:custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}] run effect give @s minecraft:jump_boost 1 5 true
+chain - execute as @a at @s if items entity @s weapon.mainhand minecraft:breeze_rod[minecraft:custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}] run effect give @s minecraft:slow_falling 1 0 true
+chain - execute as @a at @s if items entity @s weapon.mainhand minecraft:breeze_rod[minecraft:custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}] run effect give @s minecraft:speed 1 0 true
+chain - execute as @a at @s if items entity @s weapon.mainhand minecraft:breeze_rod[minecraft:custom_name={"text":"cheetos de marte ventoso","color":"white","bold":true,"italic":false}] run attribute @s minecraft:max_health modifier add halflife -10 add_value
+
+------- #25
+
+repetir - /execute as @a[tag=!customlife] run attribute @s minecraft:max_health modifier remove halflife
