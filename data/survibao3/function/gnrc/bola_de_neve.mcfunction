@@ -9,12 +9,14 @@ execute as @s store result score @s trgiy run data get entity @s Rotation[1] 100
 function survibao3:math/trig
 
 # Multiplica o vetor pela velocidade desejada
-scoreboard players set @s slot004 15000
+scoreboard players set @s slot004 1
 scoreboard players operation @s trgx *= @s slot004
 scoreboard players operation @s trgy *= @s slot004
 scoreboard players operation @s trgz *= @s slot004
 
+scoreboard players list @s
+
 # Aplica o vetor na bolinha de neve
-execute as @s at @s store result entity @n[tag=proj] Motion[0] float 0.01 run scoreboard players get @s trgx
-execute as @s at @s store result entity @n[tag=proj] Motion[1] float 0.01 run scoreboard players get @s trgy
-execute as @s at @s store result entity @n[tag=proj] Motion[2] float 0.01 run scoreboard players get @s trgz
+execute as @n[tag=proj] at @s store result entity @s Motion[0] double 0.01 run scoreboard players get @p trgx
+execute as @n[tag=proj] at @s store result entity @s Motion[1] double 0.01 run scoreboard players get @p trgy
+execute as @n[tag=proj] at @s store result entity @s Motion[2] double 0.01 run scoreboard players get @p trgz
