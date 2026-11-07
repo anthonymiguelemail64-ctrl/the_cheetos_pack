@@ -1,2 +1,3 @@
-# survibao3
-datapack para minecraft que carrega o código fonte das habilidades e poderes do servidor.
+# The Cheetos Pack
+
+Datapack para minecraft que carrega o código dos artefatos nomeados como cheetos.
