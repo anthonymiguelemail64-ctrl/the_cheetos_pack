@@ -1,6 +1,6 @@
 playsound item.trident.thunder
 particle composter ~ ~ ~ 1 1 1 1 10
-damage @s 6
+damage @s 8
 
 effect give @s slowness 6 2
 effect give @s glowing 6

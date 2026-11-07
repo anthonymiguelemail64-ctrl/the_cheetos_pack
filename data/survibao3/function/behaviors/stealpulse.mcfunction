@@ -3,7 +3,7 @@ playsound minecraft:item.mace.smash_ground_heavy ambient @a ~ ~ ~ 1 0.8
 playsound minecraft:item.trident.thunder ambient @a ~ ~ ~
 playsound minecraft:entity.allay.ambient_with_item ambient @a ~ ~ ~ 1 0.6
 
-scoreboard players set dummy copykill 2400
+scoreboard players set dummy copykill 2401
 
 execute as @p[tag=!cdm_original,distance=..8] run playsound block.beacon.activate ambient @a ~ ~ ~ 1 0.8
 

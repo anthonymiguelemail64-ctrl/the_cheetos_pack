@@ -88,7 +88,6 @@ scoreboard objectives add venc_raio dummy
 
 # --- Timer initialization ---
 execute as @a run scoreboard players set @s ptimer 0
-execute as @a run scoreboard players set @s bolt_cooldown 100
 execute as @a run scoreboard players set @s hearttimer 0
 execute run scoreboard players set dummy copykill 0
 

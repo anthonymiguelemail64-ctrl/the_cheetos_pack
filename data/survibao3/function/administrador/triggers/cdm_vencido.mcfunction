@@ -1,10 +1,12 @@
 execute if score @s bolt_mode matches 1 if score @s bolt_timer matches 0 if items entity @s weapon.mainhand *[custom_data~{vencido:1b}] run scoreboard players set @s bolt_mode 2
 execute if score @s bolt_mode matches 1 if score @s bolt_timer matches 0 unless items entity @s weapon.mainhand *[custom_data~{vencido:1b}] run scoreboard players set @s bolt_mode 0
 execute if score @s bolt_mode matches 2 if score @s bolt_cooldown matches ..0 run function survibao3:behaviors/bolt
-execute if score @s bolt_mode matches 2 if score @s bolt_cooldown matches ..0 run scoreboard players set @s bolt_cooldown 60
+execute if score @s bolt_mode matches 2 if score @s bolt_cooldown matches ..0 run scoreboard players set @s bolt_cooldown 100
 execute if score @s bolt_mode matches 2 run scoreboard players set @s bolt_mode 0
 
-execute if score @s bolt_cooldown matches 2 run scoreboard players set @s bolt_mode 0
+execute if score @s bolt_cooldown matches 1 run playsound block.amethyst_block.break ambient @a ~ ~ ~
+execute if score @s bolt_cooldown matches 1 run title @s actionbar {"text":"Raio carregado","color":"gold"}
+
 
 
 execute if predicate survibao3:rain run scoreboard players add @s head_ray_timer 2
