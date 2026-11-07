@@ -6,6 +6,6 @@
   },
   
   "rewards": {
-    "function": "survibao3:sensores/plyer_hit_mob"
+    "function": "survibao3:administrador/events/plyer_hit_mob"
   }
 }

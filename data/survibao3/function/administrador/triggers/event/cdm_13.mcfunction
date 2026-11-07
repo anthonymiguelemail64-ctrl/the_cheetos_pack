@@ -1,0 +1,2 @@
+function survibao3:behaviors/chockwave
+function survibao3:administrador/state_maneger/agresion_signal_clear

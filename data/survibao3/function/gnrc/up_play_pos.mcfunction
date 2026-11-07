@@ -1,5 +1,0 @@
-execute as @s store result score @s pry run data get entity @s Rotation[0] $(skl)
-execute as @s store result score @s prp run data get entity @s Rotation[1] $(skl)
-execute as @s store result score @s px run data get entity @s Pos[0] $(skl)
-execute as @s store result score @s py run data get entity @s Pos[1] $(skl)
-execute as @s store result score @s pz run data get entity @s Pos[2] $(skl)

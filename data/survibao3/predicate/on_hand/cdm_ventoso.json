@@ -4,7 +4,7 @@
     "entity": "this",
     "predicate": {
       "slots": {
-        "container.*": {
+        "weapon.mainhand": {
           "predicates": {
             "minecraft:custom_data": {"ventoso":true}
           }

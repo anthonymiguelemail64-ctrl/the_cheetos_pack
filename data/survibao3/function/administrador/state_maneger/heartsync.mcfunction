@@ -1,0 +1,1 @@
+execute if score @s hearttimer matches 0 run attribute @s minecraft:max_health base set 20

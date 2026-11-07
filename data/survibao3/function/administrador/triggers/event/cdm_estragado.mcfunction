@@ -1,0 +1,1 @@
+function survibao3:behaviors/esmerald_ring

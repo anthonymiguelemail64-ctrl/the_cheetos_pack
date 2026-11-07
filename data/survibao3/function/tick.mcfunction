@@ -1,1 +1,1 @@
-scoreboard players list @s
+function survibao3:administrador/ticks

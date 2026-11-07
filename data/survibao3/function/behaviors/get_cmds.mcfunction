@@ -1,0 +1,8 @@
+function survibao3:behaviors/get_13
+function survibao3:behaviors/get_cmd
+function survibao3:behaviors/get_estragado
+function survibao3:behaviors/get_mistico
+function survibao3:behaviors/get_netherite
+function survibao3:behaviors/get_requei
+function survibao3:behaviors/get_vencido
+function survibao3:behaviors/get_ventoso

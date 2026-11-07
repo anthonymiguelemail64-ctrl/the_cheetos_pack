@@ -1,0 +1,1 @@
+execute if score @s agressionc_timer matches 1 run function survibao3:administrador/state_maneger/agresion_signal_clear
