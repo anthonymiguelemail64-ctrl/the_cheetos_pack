@@ -1,8 +1,0 @@
-Load
-    Inicialização de scoreboards e etc...
-
-Tick
-    possession_maneger
-        Atribui os jogadores a certos grupos com base nos itens em seu inventário
-    hability_maneger
-        Executa certas habilidades dependendo do grupo do jogador

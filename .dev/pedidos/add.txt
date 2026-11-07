@@ -1,7 +1,0 @@
-Netherite= particula
-cobre= finalizado
-redstone= falta haste 1, visão noturna, enquanto estiver no inventário) e poder de repulsão e slowness 20
-diamante= haste 1, força 1 durabilidade 1, mas só funciona a 35 blocos de distancia de um palyer, além de poder roubar a habilidade de outro artefato por 1 minuto
-breeze= tornado que da pouco dano
-ferro= resinstenceia 2 slowness 1, e superforça que da cegueira
-ender pearl: Força II, Velocidade II e Visão Noturna, sumona bafo de dragão nerfado

@@ -1,4 +1,0 @@
-{
-  "Survib\u00e3o 3 | Dev": "/home/diego/.sklauncher/instances/dev-26-2/saves/Survib\u00e3o 3 _ Desenvolvimento/datapacks",
-  "Survib\u00e3o 3 | Mineplay": "/home/diego/.sklauncher/instances/shaky-lions-create/saves/Survib\u00e3o 3 - Desenvolvimento/datapacks"
-}
